@@ -1,0 +1,20 @@
+#import "RNCloseApp.h"
+
+@implementation RNCloseApp
+
+RCT_EXPORT_MODULE()
+
+RCT_EXPORT_METHOD(exitApp)
+{
+    exit(0);
+}
+
+#ifdef RCT_NEW_ARCH_ENABLED
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+    (const facebook::react::ObjCTurboModule::InitParams &)params
+{
+    return std::make_shared<facebook::react::NativeRNCloseAppSpecJSI>(params);
+}
+#endif
+
+@end
