@@ -1,0 +1,10 @@
+# Each line is a file pattern followed by one or more owners
+# These owners will be requested for review on PRs
+
+# Owner for everything
+* @theocikos
+
+# Specific patterns (optional examples)
+# /android/ @theocikos
+# /ios/ @theocikos
+# *.md @theocikos
