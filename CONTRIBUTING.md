@@ -138,7 +138,7 @@ npm run lint
 react-native-app-exit/
 ├── src/                    # TypeScript source files
 │   ├── index.tsx          # Main entry point
-│   └── NativeRNCloseApp.ts # TurboModule spec
+│   └── NativeRNAppExit.ts # TurboModule spec
 ├── android/               # Android native code
 │   ├── src/
 │   │   ├── main/         # Common implementation
@@ -146,8 +146,8 @@ react-native-app-exit/
 │   │   └── newarch/      # New architecture specific
 │   └── build.gradle
 ├── ios/                   # iOS native code
-│   ├── RNCloseApp.h
-│   └── RNCloseApp.mm
+│   ├── RNAppExit.h
+│   └── RNAppExit.mm
 └── react-native-app-exit.podspec
 ```
 

@@ -75,7 +75,7 @@
     "react-native": "*"
   },
   "codegenConfig": {
-    "name": "RNCloseAppSpec",
+    "name": "RNAppExitSpec",
     "type": "modules",
     "jsSrcsDir": "src"
   },

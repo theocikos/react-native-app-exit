@@ -1,4 +1,4 @@
-import NativeRNCloseApp from './NativeRNCloseApp';
+import NativeRNAppExit from './NativeRNAppExit';
 
 /**
  * Exits the React Native application immediately.
@@ -20,28 +20,8 @@ import NativeRNCloseApp from './NativeRNCloseApp';
  * ```
  */
 export function exitApp(): void {
-  NativeRNCloseApp.exitApp();
-}
-
-/**
- * Alias for exitApp
- * @see exitApp
- */
-export function closeApp(): void {
-  NativeRNCloseApp.exitApp();
-}
-
-/**
- * Alias for exitApp
- * @see exitApp
- */
-export function killApp(): void {
-  NativeRNCloseApp.exitApp();
+  NativeRNAppExit.exitApp();
 }
 
 // Default export for convenience
-export default {
-  exitApp,
-  closeApp,
-  killApp,
-};
+export default exitApp;

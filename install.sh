@@ -49,11 +49,11 @@ case "$1" in
     "test-setup")
         print_step "Setting up test React Native app..."
         
-        if [ -d "../TestCloseApp" ]; then
-            print_warning "TestCloseApp directory already exists. Remove it? (y/n)"
+        if [ -d "../TestAppExit" ]; then
+            print_warning "TestAppExit directory already exists. Remove it? (y/n)"
             read -r response
             if [ "$response" = "y" ]; then
-                rm -rf ../TestCloseApp
+                rm -rf ../TestAppExit
             else
                 print_error "Cancelled"
                 exit 1
@@ -62,16 +62,16 @@ case "$1" in
         
         cd ..
         print_step "Creating new React Native app..."
-        npx @react-native-community/cli@latest init TestCloseApp --version 0.76.0
+        npx @react-native-community/cli@latest init TestAppExit --version 0.76.0
         
-        cd TestCloseApp
+        cd TestAppExit
         print_step "Installing react-native-app-exit..."
         npm install ../react-native-app-exit
         
         print_step "Setting up iOS..."
         cd ios && pod install && cd ..
         
-        print_success "Test app created at ../TestCloseApp"
+        print_success "Test app created at ../TestAppExit"
         print_warning "Update App.tsx with the following code:"
         echo ""
         cat << 'EOF'
@@ -108,32 +108,32 @@ EOF
         
     "test-ios")
         print_step "Running iOS test..."
-        if [ ! -d "../TestCloseApp" ]; then
-            print_error "Test app not found. Run: ./install.sh test-setup"
+        if [ ! -d "../TestAppExit" ]; then
+            print_error "Test app not found. Run './install.sh test-setup' first"
             exit 1
         fi
-        cd ../TestCloseApp
+        cd ../TestAppExit
         npx react-native run-ios
         ;;
         
     "test-android")
         print_step "Running Android test..."
-        if [ ! -d "../TestCloseApp" ]; then
+        if [ ! -d "../TestAppExit" ]; then
             print_error "Test app not found. Run: ./install.sh test-setup"
             exit 1
         fi
-        cd ../TestCloseApp
+        cd ../TestAppExit
         npx react-native run-android
         ;;
         
     "test-new-arch-ios")
         print_step "Setting up iOS with New Architecture..."
-        if [ ! -d "../TestCloseApp" ]; then
+        if [ ! -d "../TestAppExit" ]; then
             print_error "Test app not found. Run: ./install.sh test-setup"
             exit 1
         fi
         
-        cd ../TestCloseApp/ios
+        cd ../TestAppExit/ios
         
         # Add to Podfile
         if ! grep -q "RCT_NEW_ARCH_ENABLED" Podfile; then
@@ -149,12 +149,12 @@ EOF
         
     "test-new-arch-android")
         print_step "Setting up Android with New Architecture..."
-        if [ ! -d "../TestCloseApp" ]; then
+        if [ ! -d "../TestAppExit" ]; then
             print_error "Test app not found. Run: ./install.sh test-setup"
             exit 1
         fi
         
-        cd ../TestCloseApp
+        cd ../TestAppExit
         
         # Add to gradle.properties
         if ! grep -q "newArchEnabled" android/gradle.properties; then

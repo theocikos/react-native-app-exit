@@ -22,7 +22,7 @@ def safeExtGet(prop, fallback) {
 android {
   compileSdkVersion safeExtGet("compileSdkVersion", 33)
   
-  namespace "com.reactnativecloseapp"
+  namespace "com.reactnativeappexit"
 
   defaultConfig {
     minSdkVersion safeExtGet("minSdkVersion", 21)

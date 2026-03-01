@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - iOS implementation using Objective-C++
 - Android implementation with separate old/new arch modules
 - TypeScript definitions
-- Three API methods: `exitApp()`, `closeApp()`, `killApp()`
+- Simple API with single method: `exitApp()`
 - Comprehensive documentation and examples
 - Auto-linking support for React Native 0.60+
 

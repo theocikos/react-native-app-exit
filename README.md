@@ -99,7 +99,7 @@ Want to test this package in a new React Native project? Use the included `insta
 ./install.sh test-android    # Test on Android
 ```
 
-The `test-setup` command will create a new React Native app in `../TestCloseApp` and install the package locally for testing.
+The `test-setup` command will create a new React Native app in `../TestAppExit` and install the package locally for testing.
 
 ## Contributing
 
